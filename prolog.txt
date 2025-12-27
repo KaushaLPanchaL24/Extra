@@ -1,0 +1,96 @@
+valuable(gold).
+female(jane).
+owns(jane,gold).
+father(john,jane).
+father(john,mary).
+gives(john,book,mary).
+father(X,Y):-female(Y).
+
+
+
+parent(john,mary).
+parent(mary,alice).
+parent(mary,bob).
+parent(peter,john).
+
+grandparent(X,Z):- parent(X,Y),parent(Y,Z).
+
+
+grades(alice,a).
+grades(bob,b).
+grades(charlie,c).
+grades(david,a).
+
+%passed(X):-grades(X,a).
+%passed(X):-grades(X,b).
+
+
+
+salary(alice,4000).
+salary(bob,5500).
+salary(charlie,4500).
+salary(david,3500).
+salary(eve,6000).
+
+highsalary(X):-salary(X,Y),Y>=5000.
+
+
+
+
+---------------------
+
+mother(mary,alice).
+mother(mary,bob).
+father(john,alice).
+mother(sarah,mary).
+father(peter,mary).
+
+sib(X,Y):-mother(M,X),mother(M,Y).
+
+son(X):-mother(M,X),father(F,X).
+
+-----------------------------------------------------
+
+
+owns(alice, toyota).
+owns(bob, honda).
+owns(charlie, ford).
+
+ownscar(X,Y):-owns(X,Y).
+
+
+---------------------------------------------------
+
+
+available('The Great Gatsby').
+checked_out('1984').
+available('To Kill a Mockingbird').
+
+availablex(X):-available(X).
+
+
+
+-----------------------------------------------------------
+enrolled_in(alice, math).
+enrolled_in(alice, physics).
+enrolled_in(bob, chemistry).
+enrolled_in(bob, math).
+enrolled_in(charlie, biology).
+enrolled_in(david, history).
+enrolled_in(david, geography).
+
+
+enr(X, Y) :- enrolled_in(X, Y).
+
+%enr(X,math),enr(X,Y),Y \= math,Y\=biology.
+-----------------------------------------------------
+friends(alice, bob).
+friends(bob, charlie).
+friends(alice, david).
+friends(charlie, eve).
+
+fri(X, Y) :- friends(X, Y).
+fri(X, Y) :- friends(Y, X).
+
+
+-----------------------------------
